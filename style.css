@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.3s;
+}
+
+.container {
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 45vh;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  border-style: double;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+form {
+  margin: 2rem 0 1rem 0;
+}
+
+form select,
+button,
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+}
+
+form input {
+  font-size: 1rem;
+  height: 3rem;
+  padding-left: 0.5rem;
+}
+
+.dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.dropdown i {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.select-container img {
+  max-width: 3rem;
+}
+
+form select,
+button,
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  border-radius: 0.5rem;
+}
+
+.select-container select {
+  font-size: 1.1rem;              
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.msg {
+  margin: 2rem 0 2rem 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+form button {
+  height: 3rem;
+  background-color: rgba(23, 180, 134, 0.8);
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 0.65rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  text-decoration: underline;
+}
+
+
+/* dark mode container */
+body.dark-mode {
+  background-color: #111927;
+  background-image:
+    radial-gradient(at 47% 33%, hsl(162.00, 77%, 40%) 0, transparent 59%),
+    radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);
+}
+
+.container.dark-mode {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 5px solid rgba(255, 255, 255, 0.125);
+}
+
+body.dark-mode form button {
+  color: #fff;
+}
+
+body.dark-mode p {
+  color: #fff;
+  font-weight: bold;
+}
+
+body.dark-mode .dropdown i {
+  color: #fff;
+}
+
+body.dark-mode form input {
+  border: 1px solid lightgray;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color: #fff;
+}
+
+body.dark-mode .select-container {
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color: #fff;
+}
+
+body.dark-mode .select-container select {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .msg {
+  color: #fff;
+}
+
+body.dark-mode form button {
+  background-color: rgba(23, 180, 134, 0.8);
+  color: #fff;
+}
+
+body.dark-mode .toggle-container i {
+  color: #f4e4ba;
+}
+
+
+/* light mode container */
+body.light-mode {
+  background-color: #f4e4ba;
+}
+
+body.light-mode .container {
+  background-color: #fdfafa;
+  border-radius: 12px;
+  border: 5px solid rgba(43, 44, 45, 0.3);
+  border-style: double;
+}
+
+body.light-mode h2 {
+  color: black;
+}
+
+body.light-mode form input {
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  border: 1px solid lightgray;
+  color: #000000;
+}
+
+body.light-mode form p {
+  color: black;
+}
+
+body.light-mode .dropdown {
+  color: #000000;
+}
+
+body.light-mode .dropdown i {
+  color: #000000;
+}
+
+body.light-mode form button {
+  background-color: rgb(194, 123, 73);
+  color: #000000;
+}
+
+body.light-mode .select-container {
+  border: 1px solid lightgray;
+  color: #fff;
+}
+
+body.light-mode .toggle-container i {
+  color: #080808;
+}
+
+h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+
+/* Toggle switch styles */
+.toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-container i {
+  font-size: 1.6rem;
+  margin: 0.5rem;
+  color: #ccc;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-label {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-label::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s;
+}
+
+input[type="checkbox"]:checked+.toggle-label {
+  background-color: #666;
+}
+
+input[type="checkbox"]:checked+.toggle-label::after {
+  transform: translateX(20px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 330) {
+
+  .amount input,
+  .dropdown select,
+  form button {
+    font-size: 0.9rem;
+  }
+
+  .dropdown {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin: 1rem;
+  }
+
+  .dropdown i {
+    margin-bottom: 2rem;
+  }
+
+  .select-container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .select-container img {
+    max-width: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
